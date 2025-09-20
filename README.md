@@ -1,326 +1,363 @@
-# Merre Platform 🚀
+# Merre Data Platform
 
-> Plataforma frontend moderna desarrollada con React y Material-UI para gestión de datos y análisis
+> **Plataforma educativa moderna para gestión de evaluaciones y análisis de datos académicos**
 
-## 📋 Descripción
+## Descripción
 
-Merre Platform es una aplicación web robusta desarrollada con React y TypeScript que integra múltiples librerías modernas para crear una plataforma versátil de gestión de datos. Combina Material-UI, Bootstrap, Firebase y herramientas avanzadas de formularios para ofrecer una experiencia de usuario completa.
+Merre Data Platform es una aplicación web robusta desarrollada con React y TypeScript que integra múltiples librerías modernas para crear una plataforma versátil de gestión de datos educativos. Combina Material-UI, Bootstrap, Firebase y herramientas avanzadas de formularios para ofrecer una experiencia de usuario completa en el ámbito educativo.
 
-## ✨ Características Principales
+## Características Principales
 
-- **🎨 UI Moderna**: Combinación de Material-UI y Bootstrap para diseño responsivo
-- **📋 Formularios Avanzados**: React Hook Form con validación robusta
-- **📅 Gestión de Fechas**: React DatePicker integrado con date-fns
-- **🔥 Backend Firebase**: Integración completa con servicios de Firebase
-- **🎯 Iconografía Rica**: FontAwesome icons integrados
-- **📊 Gestión de Estado**: TypeScript para tipado estático
-- **🔄 Routing Avanzado**: React Router DOM para navegación SPA
+### Funcionalidades
 
-## 🛠️ Stack Tecnológico
+- **Sistema de Autenticación:** Gestión completa de usuarios con Firebase Auth
+- **Gestión de Evaluaciones:** Creación, edición y aplicación de exámenes
+- **Dashboard Administrativo:** Panel de control para administradores
+- **Análisis de Resultados:** Visualización de estadísticas y métricas
+- **Gestión de Usuarios:** Administración de estudiantes y profesores
+- **Responsive Design:** Interfaz adaptativa para todos los dispositivos
 
-### Core Frontend
-- **React 18.2.0** - Biblioteca de interfaz de usuario
-- **TypeScript 3.9.10** - Tipado estático
-- **Create React App 5.0.1** - Configuración base
+### Características Técnicas
 
-### UI Frameworks
-- **Material-UI 5.15.15** - Componentes principales de UI
-- **Bootstrap 5.3.3** - Sistema de grid y utilidades
-- **React Bootstrap 2.10.2** - Componentes Bootstrap para React
-- **MDB React UI Kit 8.0.0** - Material Design Bootstrap
+- **Clean Architecture:** Implementación con separación de responsabilidades
+- **Type Safety:** TypeScript estricto en toda la aplicación
+- **Componentes Reutilizables:** Biblioteca de componentes UI consistente
+- **Formularios Avanzados:** Validación robusta con React Hook Form
+- **Estado Global:** Gestión eficiente del estado de la aplicación
+- **Firebase Integration:** Backend como servicio completo
 
-### Iconografía
-- **FontAwesome 6.5.2** - Iconos vectoriales
-- **Material-UI Icons** - Iconos de Material Design
+## Stack Tecnológico
 
-### Formularios y Fechas
-- **React Hook Form 7.51.3** - Gestión de formularios performante
-- **React DatePicker 6.8.0** - Selector de fechas avanzado
-- **Date-fns 3.6.0** - Utilidades de manipulación de fechas
+### Frontend
+- **React 18.2.0** - Biblioteca principal
+- **TypeScript 5.3.3** - Tipado estático
+- **Material-UI 5.15.15** - Sistema de diseño
+- **React Bootstrap 2.10.2** - Componentes adicionales
+- **React Hook Form 7.51.3** - Gestión de formularios
 
 ### Backend y Servicios
-- **Firebase 10.11.0** - Backend as a Service
-- **Axios 1.6.8** - Cliente HTTP para APIs
+- **Firebase 10.11.0** - Backend como servicio
+- **Firebase Auth** - Autenticación
+- **Firestore** - Base de datos NoSQL
+- **Firebase Storage** - Almacenamiento de archivos
 
-### Utilidades
-- **Classnames 2.5.1** - Gestión dinámica de clases CSS
+### Herramientas de Desarrollo
+- **Create React App** - Configuración base
+- **React Router DOM 6.22.3** - Enrutamiento
+- **React DatePicker 6.8.0** - Selector de fechas
+- **Axios 1.6.8** - Cliente HTTP
 
-## 🚀 Instalación y Configuración
+## Arquitectura
+
+### Estructura del Proyecto
+
+```
+src/
+├── domain/                     # Capa de Dominio
+│   ├── entities/              # Entidades de negocio
+│   │   ├── User.ts           # Entidad Usuario
+│   │   ├── Assessment.ts     # Entidad Evaluación
+│   │   └── Admin.ts          # Entidad Administrador
+│   └── interfaces/           # Contratos y abstracciones
+│       ├── repositories/     # Interfaces de repositorio
+│       └── common/          # Tipos comunes
+├── application/              # Capa de Aplicación
+│   ├── usecases/            # Casos de uso
+│   │   ├── AuthUseCases.ts  # Casos de uso de autenticación
+│   │   ├── UserUseCases.ts  # Casos de uso de usuarios
+│   │   └── AssessmentUseCases.ts # Casos de uso de evaluaciones
+│   └── dto/                 # DTOs de aplicación
+├── infrastructure/          # Capa de Infraestructura
+│   ├── firebase/           # Configuración Firebase
+│   ├── repositories/       # Implementaciones de repositorio
+│   └── http/              # Clientes HTTP
+└── presentation/           # Capa de Presentación
+    ├── components/         # Componentes React
+    ├── pages/             # Páginas principales
+    └── hooks/             # Custom hooks
+```
+
+### Casos de Uso Implementados
+
+#### Autenticación
+```typescript
+// Login de usuario
+const loginResult = await authUseCases.login(email, password);
+
+// Registro de usuario
+const registerResult = await authUseCases.register(userData);
+
+// Logout
+await authUseCases.logout();
+```
+
+#### Gestión de Evaluaciones
+```typescript
+// Crear evaluación
+const assessment = await assessmentUseCases.create(assessmentData);
+
+// Obtener evaluaciones
+const assessments = await assessmentUseCases.getAll();
+
+// Evaluar respuestas
+const result = await assessmentUseCases.evaluate(answers);
+```
+
+#### Administración
+```typescript
+// Dashboard de estadísticas
+const stats = await adminUseCases.getDashboardStats();
+
+// Gestión de usuarios
+const users = await adminUseCases.getUsers();
+```
+
+## Instalación
 
 ### Prerrequisitos
-- Node.js 16+ (LTS recomendado)
-- npm o yarn
-- Cuenta de Firebase (opcional)
 
-### Instalación
+- Node.js >= 16.0.0
+- npm >= 8.0.0 o yarn >= 1.22.0
+- Cuenta de Firebase
+
+### Configuración
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/Yop007N/merre.git
-cd merre
+# Clonar repositorio
+git clone https://github.com/Yop007N/merre-data-platform.git
+cd merre-data-platform
 
 # Instalar dependencias
 npm install
 
-# Configurar variables de entorno (si usas Firebase)
+# Configurar Firebase
 cp .env.example .env
-# Editar .env con tus credenciales de Firebase
+# Editar .env con las credenciales de Firebase
 
-# Iniciar servidor de desarrollo
+# Iniciar aplicación
 npm start
 ```
 
 ### Variables de Entorno
 
-```env
-# Firebase Configuration
-REACT_APP_FIREBASE_API_KEY=your_api_key
-REACT_APP_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-REACT_APP_FIREBASE_PROJECT_ID=your_project_id
-REACT_APP_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-REACT_APP_FIREBASE_APP_ID=your_app_id
-
-# API Configuration
-REACT_APP_API_BASE_URL=http://localhost:3001
-```
-
-## 📖 Scripts Disponibles
-
 ```bash
-# Desarrollo
-npm start             # Servidor de desarrollo (puerto 3000)
-
-# Construcción
-npm run build         # Build optimizado para producción
-
-# Testing
-npm test              # Ejecuta tests en modo watch
-
-# Análisis
-npm run eject         # Expone configuración de CRA (irreversible)
+# .env
+REACT_APP_FIREBASE_API_KEY=tu_api_key
+REACT_APP_FIREBASE_AUTH_DOMAIN=tu_auth_domain
+REACT_APP_FIREBASE_PROJECT_ID=tu_project_id
+REACT_APP_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+REACT_APP_FIREBASE_APP_ID=tu_app_id
 ```
 
-## 🏗️ Estructura del Proyecto
+## Configuración de Firebase
 
+### Firestore Collections
+
+```javascript
+// Estructura de colecciones
+users: {
+  uid: string,
+  email: string,
+  displayName: string,
+  role: 'student' | 'teacher' | 'admin',
+  createdAt: timestamp,
+  lastLogin: timestamp
+}
+
+assessments: {
+  id: string,
+  title: string,
+  description: string,
+  questions: Question[],
+  createdBy: string,
+  createdAt: timestamp,
+  isActive: boolean
+}
+
+results: {
+  id: string,
+  assessmentId: string,
+  userId: string,
+  answers: Answer[],
+  score: number,
+  submittedAt: timestamp
+}
 ```
-src/
-├── components/              # Componentes reutilizables
-│   ├── ui/                 # Componentes base de UI
-│   ├── forms/              # Componentes de formularios
-│   ├── layout/             # Componentes de layout
-│   └── common/             # Componentes comunes
-├── pages/                  # Páginas principales
-│   ├── Dashboard/
-│   ├── Profile/
-│   └── Settings/
-├── hooks/                  # Custom hooks
-│   ├── useForm.ts
-│   ├── useAuth.ts
-│   └── useFirebase.ts
-├── services/               # Servicios de API
-│   ├── firebase.ts
-│   ├── api.ts
-│   └── auth.ts
-├── types/                  # Definiciones TypeScript
-│   ├── user.types.ts
-│   ├── form.types.ts
-│   └── api.types.ts
-├── utils/                  # Utilidades
-│   ├── formatters.ts
-│   ├── validators.ts
-│   └── constants.ts
-└── styles/                 # Estilos globales
-    └── App.css
+
+### Reglas de Seguridad
+
+```javascript
+// Firestore Security Rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users can read/write their own data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Only admins can manage assessments
+    match /assessments/{assessmentId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+  }
+}
 ```
 
-## 🎨 Configuración de UI
+## Uso
 
-### Material-UI Theme
+### Autenticación
 
 ```typescript
-import { createTheme } from '@mui/material/styles';
+// Hook de autenticación
+const { user, login, logout, loading } = useAuth();
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-  typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  },
+// Componente protegido
+function ProtectedComponent() {
+  if (!user) return <LoginForm />;
+  return <Dashboard />;
+}
+```
+
+### Formularios
+
+```typescript
+// Formulario con validación
+const { register, handleSubmit, errors } = useForm({
+  resolver: yupResolver(schema)
 });
-```
 
-### Bootstrap Integration
-
-```css
-/* Importación en index.css o App.css */
-@import 'bootstrap/dist/css/bootstrap.min.css';
-```
-
-## 📋 Gestión de Formularios
-
-### React Hook Form Setup
-
-```typescript
-import { useForm } from 'react-hook-form';
-
-interface FormData {
-  name: string;
-  email: string;
-  date: Date;
-}
-
-export function MyForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
-
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
-
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('name', { required: true })} />
-      {errors.name && <span>Este campo es requerido</span>}
-    </form>
-  );
-}
-```
-
-## 🔥 Integración con Firebase
-
-### Configuración Inicial
-
-```typescript
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  // ... otras configuraciones
+const onSubmit = async (data) => {
+  const result = await submitAssessment(data);
+  if (result.success) {
+    navigate('/results');
+  }
 };
-
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export const db = getFirestore(app);
 ```
 
-## 📅 Gestión de Fechas
-
-### DatePicker Configuration
+### Gestión de Estado
 
 ```typescript
-import DatePicker from 'react-datepicker';
-import { format } from 'date-fns';
-import 'react-datepicker/dist/react-datepicker.css';
+// Context para estado global
+const { assessments, loading, error } = useAssessments();
 
-export function MyDatePicker() {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-
-  return (
-    <DatePicker
-      selected={selectedDate}
-      onChange={(date) => setSelectedDate(date)}
-      dateFormat="dd/MM/yyyy"
-      locale="es"
-    />
-  );
-}
+// Actualización de estado
+const updateAssessment = async (id, data) => {
+  await assessmentService.update(id, data);
+  refreshAssessments();
+};
 ```
 
-## 🌐 Despliegue
+## Testing
 
-### Build de Producción
-
-```bash
-npm run build
-```
-
-### Servicios de Hosting
-
-#### Firebase Hosting
-```bash
-npm install -g firebase-tools
-firebase init hosting
-firebase deploy
-```
-
-#### Vercel
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-#### Netlify
-```bash
-# Build command: npm run build
-# Publish directory: build
-```
-
-## 🧪 Testing
+### Ejecutar Tests
 
 ```bash
-# Ejecutar tests
+# Tests unitarios
 npm test
 
 # Tests con cobertura
 npm test -- --coverage
 
-# Tests en CI
-npm test -- --ci --silent
+# Tests específicos
+npm test -- --testNamePattern="AuthUseCases"
 ```
 
-## 🔧 Optimizaciones
+### Estructura de Tests
 
-### Lazy Loading
-
-```typescript
-import { lazy, Suspense } from 'react';
-
-const Dashboard = lazy(() => import('./pages/Dashboard'));
-
-function App() {
-  return (
-    <Suspense fallback={<div>Cargando...</div>}>
-      <Dashboard />
-    </Suspense>
-  );
-}
+```
+src/
+├── __tests__/
+│   ├── components/
+│   ├── usecases/
+│   └── utils/
+└── setupTests.js
 ```
 
-## 🤝 Contribución
+## Scripts Disponibles
 
-1. Fork el proyecto
-2. Crea tu branch (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -m 'Add: nueva funcionalidad'`)
-4. Push al branch (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
+```bash
+npm start            # Ejecutar en desarrollo
+npm run build        # Build de producción
+npm test             # Ejecutar tests
+npm run eject        # Ejectar de CRA (no recomendado)
+```
 
-## 📝 Licencia
+## Estructura de Componentes
 
-Este proyecto es privado. Todos los derechos reservados.
+### Componentes Principales
 
-## 👨‍💻 Autor
+- **LoginForm** - Formulario de autenticación
+- **Dashboard** - Panel principal de usuario
+- **AssessmentList** - Lista de evaluaciones
+- **AssessmentForm** - Formulario de evaluación
+- **ResultsView** - Visualización de resultados
+- **AdminPanel** - Panel de administración
 
-**Enrique B. (Yop007N)**
-- GitHub: [@Yop007N](https://github.com/Yop007N)
-- Especialización: Frontend Development y UI/UX
+### Componentes Reutilizables
 
-## 🔗 Enlaces Relacionados
+- **Card** - Componente de tarjeta
+- **Button** - Botón personalizado
+- **Input** - Campo de entrada
+- **Modal** - Ventana modal
+- **Loading** - Indicador de carga
 
-- [React Documentation](https://reactjs.org/)
-- [Material-UI](https://mui.com/)
-- [Firebase](https://firebase.google.com/)
-- [React Hook Form](https://react-hook-form.com/)
+## Deployment
+
+### Build de Producción
+
+```bash
+# Generar build optimizado
+npm run build
+
+# Los archivos se generan en /build
+build/
+├── static/
+│   ├── css/
+│   └── js/
+├── index.html
+└── manifest.json
+```
+
+### Firebase Hosting
+
+```bash
+# Instalar Firebase CLI
+npm install -g firebase-tools
+
+# Inicializar proyecto
+firebase init hosting
+
+# Desplegar
+firebase deploy
+```
+
+## Contribución
+
+### Guías de Desarrollo
+
+1. Seguir principios de Clean Architecture
+2. Usar TypeScript estricto
+3. Escribir tests para componentes nuevos
+4. Mantener consistencia en nomenclatura
+5. Documentar componentes complejos
+
+### Estructura de Commits
+
+```
+feat: nueva funcionalidad
+fix: corrección de bug
+docs: actualización de documentación
+style: cambios de formato
+refactor: refactorización de código
+test: agregar o modificar tests
+```
 
 ---
 
-🚀 Construyendo plataformas modernas y escalables
+**Autor:** Enrique Bobadilla
+**Versión:** 2.0.0
+**Última actualización:** Diciembre 2024
