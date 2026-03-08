@@ -1,48 +1,48 @@
 # Merre Data Platform
 
-> **Plataforma educativa moderna para gestión de evaluaciones y análisis de datos académicos**
+> **Plataforma educativa moderna para gesti??n de evaluaciones y an??lisis de datos acad??micos**
 
-## Descripción
+## Descripci??n
 
-Merre Data Platform es una aplicación web robusta desarrollada con React y TypeScript que integra múltiples librerías modernas para crear una plataforma versátil de gestión de datos educativos. Combina Material-UI, Bootstrap, Firebase y herramientas avanzadas de formularios para ofrecer una experiencia de usuario completa en el ámbito educativo.
+Merre Data Platform es una aplicaci??n web robusta desarrollada con React y TypeScript que integra m??ltiples librer??as modernas para crear una plataforma vers??til de gesti??n de datos educativos. Combina Material-UI, Bootstrap, Firebase y herramientas avanzadas de formularios para ofrecer una experiencia de usuario completa en el ??mbito educativo.
 
-## Características Principales
+## Caracter??sticas Principales
 
 ### Funcionalidades
 
-- **Sistema de Autenticación:** Gestión completa de usuarios con Firebase Auth
-- **Gestión de Evaluaciones:** Creación, edición y aplicación de exámenes
+- **Sistema de Autenticaci??n:** Gesti??n completa de usuarios con Firebase Auth
+- **Gesti??n de Evaluaciones:** Creaci??n, edici??n y aplicaci??n de ex??menes
 - **Dashboard Administrativo:** Panel de control para administradores
-- **Análisis de Resultados:** Visualización de estadísticas y métricas
-- **Gestión de Usuarios:** Administración de estudiantes y profesores
+- **An??lisis de Resultados:** Visualizaci??n de estad??sticas y m??tricas
+- **Gesti??n de Usuarios:** Administraci??n de estudiantes y profesores
 - **Responsive Design:** Interfaz adaptativa para todos los dispositivos
 
-### Características Técnicas
+### Caracter??sticas T??cnicas
 
-- **Clean Architecture:** Implementación con separación de responsabilidades
-- **Type Safety:** TypeScript estricto en toda la aplicación
+- **Clean Architecture:** Implementaci??n con separaci??n de responsabilidades
+- **Type Safety:** TypeScript estricto en toda la aplicaci??n
 - **Componentes Reutilizables:** Biblioteca de componentes UI consistente
-- **Formularios Avanzados:** Validación robusta con React Hook Form
-- **Estado Global:** Gestión eficiente del estado de la aplicación
+- **Formularios Avanzados:** Validaci??n robusta con React Hook Form
+- **Estado Global:** Gesti??n eficiente del estado de la aplicaci??n
 - **Firebase Integration:** Backend como servicio completo
 
-## Stack Tecnológico
+## Stack Tecnol??gico
 
 ### Frontend
 - **React 18.2.0** - Biblioteca principal
-- **TypeScript 5.3.3** - Tipado estático
-- **Material-UI 5.15.15** - Sistema de diseño
+- **TypeScript 5.3.3** - Tipado est??tico
+- **Material-UI 5.15.15** - Sistema de dise??o
 - **React Bootstrap 2.10.2** - Componentes adicionales
-- **React Hook Form 7.51.3** - Gestión de formularios
+- **React Hook Form 7.51.3** - Gesti??n de formularios
 
 ### Backend y Servicios
 - **Firebase 10.11.0** - Backend como servicio
-- **Firebase Auth** - Autenticación
+- **Firebase Auth** - Autenticaci??n
 - **Firestore** - Base de datos NoSQL
 - **Firebase Storage** - Almacenamiento de archivos
 
 ### Herramientas de Desarrollo
-- **Create React App** - Configuración base
+- **Create React App** - Configuraci??n base
 - **React Router DOM 6.22.3** - Enrutamiento
 - **React DatePicker 6.8.0** - Selector de fechas
 - **Axios 1.6.8** - Cliente HTTP
@@ -53,33 +53,33 @@ Merre Data Platform es una aplicación web robusta desarrollada con React y Type
 
 ```
 src/
-├── domain/                     # Capa de Dominio
-│   ├── entities/              # Entidades de negocio
-│   │   ├── User.ts           # Entidad Usuario
-│   │   ├── Assessment.ts     # Entidad Evaluación
-│   │   └── Admin.ts          # Entidad Administrador
-│   └── interfaces/           # Contratos y abstracciones
-│       ├── repositories/     # Interfaces de repositorio
-│       └── common/          # Tipos comunes
-├── application/              # Capa de Aplicación
-│   ├── usecases/            # Casos de uso
-│   │   ├── AuthUseCases.ts  # Casos de uso de autenticación
-│   │   ├── UserUseCases.ts  # Casos de uso de usuarios
-│   │   └── AssessmentUseCases.ts # Casos de uso de evaluaciones
-│   └── dto/                 # DTOs de aplicación
-├── infrastructure/          # Capa de Infraestructura
-│   ├── firebase/           # Configuración Firebase
-│   ├── repositories/       # Implementaciones de repositorio
-│   └── http/              # Clientes HTTP
-└── presentation/           # Capa de Presentación
-    ├── components/         # Componentes React
-    ├── pages/             # Páginas principales
-    └── hooks/             # Custom hooks
+????????? domain/                     # Capa de Dominio
+???   ????????? entities/              # Entidades de negocio
+???   ???   ????????? User.ts           # Entidad Usuario
+???   ???   ????????? Assessment.ts     # Entidad Evaluaci??n
+???   ???   ????????? Admin.ts          # Entidad Administrador
+???   ????????? interfaces/           # Contratos y abstracciones
+???       ????????? repositories/     # Interfaces de repositorio
+???       ????????? common/          # Tipos comunes
+????????? application/              # Capa de Aplicaci??n
+???   ????????? usecases/            # Casos de uso
+???   ???   ????????? AuthUseCases.ts  # Casos de uso de autenticaci??n
+???   ???   ????????? UserUseCases.ts  # Casos de uso de usuarios
+???   ???   ????????? AssessmentUseCases.ts # Casos de uso de evaluaciones
+???   ????????? dto/                 # DTOs de aplicaci??n
+????????? infrastructure/          # Capa de Infraestructura
+???   ????????? firebase/           # Configuraci??n Firebase
+???   ????????? repositories/       # Implementaciones de repositorio
+???   ????????? http/              # Clientes HTTP
+????????? presentation/           # Capa de Presentaci??n
+    ????????? components/         # Componentes React
+    ????????? pages/             # P??ginas principales
+    ????????? hooks/             # Custom hooks
 ```
 
 ### Casos de Uso Implementados
 
-#### Autenticación
+#### Autenticaci??n
 ```typescript
 // Login de usuario
 const loginResult = await authUseCases.login(email, password);
@@ -91,9 +91,9 @@ const registerResult = await authUseCases.register(userData);
 await authUseCases.logout();
 ```
 
-#### Gestión de Evaluaciones
+#### Gesti??n de Evaluaciones
 ```typescript
-// Crear evaluación
+// Crear evaluaci??n
 const assessment = await assessmentUseCases.create(assessmentData);
 
 // Obtener evaluaciones
@@ -103,16 +103,16 @@ const assessments = await assessmentUseCases.getAll();
 const result = await assessmentUseCases.evaluate(answers);
 ```
 
-#### Administración
+#### Administraci??n
 ```typescript
-// Dashboard de estadísticas
+// Dashboard de estad??sticas
 const stats = await adminUseCases.getDashboardStats();
 
-// Gestión de usuarios
+// Gesti??n de usuarios
 const users = await adminUseCases.getUsers();
 ```
 
-## Instalación
+## Instalaci??n
 
 ### Prerrequisitos
 
@@ -120,7 +120,7 @@ const users = await adminUseCases.getUsers();
 - npm >= 8.0.0 o yarn >= 1.22.0
 - Cuenta de Firebase
 
-### Configuración
+### Configuraci??n
 
 ```bash
 # Clonar repositorio
@@ -134,7 +134,7 @@ npm install
 cp .env.example .env
 # Editar .env con las credenciales de Firebase
 
-# Iniciar aplicación
+# Iniciar aplicaci??n
 npm start
 ```
 
@@ -150,7 +150,7 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
 REACT_APP_FIREBASE_APP_ID=tu_app_id
 ```
 
-## Configuración de Firebase
+## Configuraci??n de Firebase
 
 ### Firestore Collections
 
@@ -209,10 +209,10 @@ service cloud.firestore {
 
 ## Uso
 
-### Autenticación
+### Autenticaci??n
 
 ```typescript
-// Hook de autenticación
+// Hook de autenticaci??n
 const { user, login, logout, loading } = useAuth();
 
 // Componente protegido
@@ -225,7 +225,7 @@ function ProtectedComponent() {
 ### Formularios
 
 ```typescript
-// Formulario con validación
+// Formulario con validaci??n
 const { register, handleSubmit, errors } = useForm({
   resolver: yupResolver(schema)
 });
@@ -238,13 +238,13 @@ const onSubmit = async (data) => {
 };
 ```
 
-### Gestión de Estado
+### Gesti??n de Estado
 
 ```typescript
 // Context para estado global
 const { assessments, loading, error } = useAssessments();
 
-// Actualización de estado
+// Actualizaci??n de estado
 const updateAssessment = async (id, data) => {
   await assessmentService.update(id, data);
   refreshAssessments();
@@ -262,7 +262,7 @@ npm test
 # Tests con cobertura
 npm test -- --coverage
 
-# Tests específicos
+# Tests espec??ficos
 npm test -- --testNamePattern="AuthUseCases"
 ```
 
@@ -270,18 +270,18 @@ npm test -- --testNamePattern="AuthUseCases"
 
 ```
 src/
-├── __tests__/
-│   ├── components/
-│   ├── usecases/
-│   └── utils/
-└── setupTests.js
+????????? __tests__/
+???   ????????? components/
+???   ????????? usecases/
+???   ????????? utils/
+????????? setupTests.js
 ```
 
 ## Scripts Disponibles
 
 ```bash
 npm start            # Ejecutar en desarrollo
-npm run build        # Build de producción
+npm run build        # Build de producci??n
 npm test             # Ejecutar tests
 npm run eject        # Ejectar de CRA (no recomendado)
 ```
@@ -290,24 +290,24 @@ npm run eject        # Ejectar de CRA (no recomendado)
 
 ### Componentes Principales
 
-- **LoginForm** - Formulario de autenticación
+- **LoginForm** - Formulario de autenticaci??n
 - **Dashboard** - Panel principal de usuario
 - **AssessmentList** - Lista de evaluaciones
-- **AssessmentForm** - Formulario de evaluación
-- **ResultsView** - Visualización de resultados
-- **AdminPanel** - Panel de administración
+- **AssessmentForm** - Formulario de evaluaci??n
+- **ResultsView** - Visualizaci??n de resultados
+- **AdminPanel** - Panel de administraci??n
 
 ### Componentes Reutilizables
 
 - **Card** - Componente de tarjeta
-- **Button** - Botón personalizado
+- **Button** - Bot??n personalizado
 - **Input** - Campo de entrada
 - **Modal** - Ventana modal
 - **Loading** - Indicador de carga
 
 ## Deployment
 
-### Build de Producción
+### Build de Producci??n
 
 ```bash
 # Generar build optimizado
@@ -315,11 +315,11 @@ npm run build
 
 # Los archivos se generan en /build
 build/
-├── static/
-│   ├── css/
-│   └── js/
-├── index.html
-└── manifest.json
+????????? static/
+???   ????????? css/
+???   ????????? js/
+????????? index.html
+????????? manifest.json
 ```
 
 ### Firebase Hosting
@@ -335,9 +335,9 @@ firebase init hosting
 firebase deploy
 ```
 
-## Contribución
+## Contribuci??n
 
-### Guías de Desarrollo
+### Gu??as de Desarrollo
 
 1. Seguir principios de Clean Architecture
 2. Usar TypeScript estricto
@@ -349,15 +349,15 @@ firebase deploy
 
 ```
 feat: nueva funcionalidad
-fix: corrección de bug
-docs: actualización de documentación
+fix: correcci??n de bug
+docs: actualizaci??n de documentaci??n
 style: cambios de formato
-refactor: refactorización de código
+refactor: refactorizaci??n de c??digo
 test: agregar o modificar tests
 ```
 
 ---
 
 **Autor:** Enrique Bobadilla
-**Versión:** 2.0.0
-**Última actualización:** Diciembre 2024
+**Versi??n:** 2.0.0
+**??ltima actualizaci??n:** Diciembre 2024
